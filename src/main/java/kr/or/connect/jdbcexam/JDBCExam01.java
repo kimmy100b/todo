@@ -34,11 +34,15 @@ public class JDBCExam01 {
 		
 		/*update test*/
 		
-		Long id = (long) 3;
-		String title="알고리즘 공부하기";
-		
-//		Todo todo = new Todo(id,)
-		
+//		Long id = (long) 3;
+//		String type="DOING";
+//		
+//		Todo todo = new Todo(id, type);
+//		
+//		TodoDao dao = new TodoDao();
+//		int updateCount = dao.updateTodo(todo);
+//		
+//		System.out.println(updateCount);		
 	}
 
 }
