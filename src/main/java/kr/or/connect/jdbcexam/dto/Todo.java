@@ -27,11 +27,12 @@ public class Todo extends HttpServlet {
 		this.type = type;
 	}
 
-	public Todo(String title, String name,int sequence) {
+	public Todo(String title, String name,int sequence,String type) {
 		super();
 		this.title = title;
 		this.name = name;
 		this.sequence = sequence;
+		this.type = type;
 	}
 	
 	public Todo(Long id, String name, String regDate, int sequence, String title, String type) {

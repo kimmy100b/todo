@@ -39,14 +39,15 @@ public class TodoDao extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		String sql = "INSERT INTO todo(title, name, sequence) VALUES(?,?,?)";
+		String sql = "INSERT INTO todo(title, name, sequence, type) VALUES(?,?,?,?)";
 
 		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, todo.getTitle());
 			ps.setString(2, todo.getName());
 			ps.setInt(3, todo.getSequence());
-	
+			ps.setString(4, todo.getType());
+
 			insertCount = ps.executeUpdate();
 
 		} catch (Exception ex) {
