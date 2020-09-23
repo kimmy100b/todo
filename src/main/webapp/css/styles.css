@@ -1,0 +1,8 @@
+/*font css*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/*variables css*/
+@import "variables.css";
+
+/*page css*/
+@import "main.css";
