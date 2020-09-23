@@ -66,7 +66,7 @@ public class TodoDao extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate desc";
+		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate asc";
 		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 
