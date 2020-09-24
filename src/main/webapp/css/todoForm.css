@@ -1,51 +1,51 @@
-.todo-title {
+.todo-title{
     text-align: center;
     margin-bottom: 35px;
 }
 
-.todo-form {
-    margin: 0% 23%;
+.todo-form{
+    margin: 0px 478px;
 }
 
-.form-group {
+.form-group{
     display: grid;
     margin-bottom: 20px;
 }
 
-.form-group label {
+.form-group label{
     margin-bottom: 10px;
 }
 
-.form-group input[type="text"] {
-    width: 696px;
-    height: 30px;
+.form-group input[type=text]{
+    width: 700px;
+    height: 30px; 
 }
 
-.form-radio {
+.form-radio{
     display: flex;
     margin-top: 10px;
 }
 
-.form-radio label {
+.form-radio label{
     padding-right: 10px;
 }
 
-.btn-back {
+.btn-back{
     width: 120px;
     height: 35px;
     border: 1.5px black solid;
     text-align: center;
 }
 
-.btn-back a {
+.btn-back a{
     font-weight: 500;
     font-size: large;
     text-decoration: none;
     vertical-align: -webkit-baseline-middle;
 }
 
-.todo-form input[type="submit"],
-.todo-form input[type="reset"] {
+.todo-form input[type=submit],
+.todo-form input[type=reset]{
     width: 120px;
     height: 35px;
     font-weight: 500;
@@ -55,12 +55,12 @@
     border: none;
 }
 
-.todo-form input[type="submit"] {
+.todo-form input[type=submit]{
     margin-right: 8px;
 }
 
-.form-btn {
-    display: flex;
+.form-btn{
+    display:flex;
     justify-content: space-between;
     margin-top: 50px;
 }
