@@ -24,13 +24,13 @@ public class JDBCExam01 {
 		
 		/*select test*/
 		
-//		TodoDao dao = new TodoDao();
-//		
-//		List<Todo> list = dao.getTodos();
-//		
-//		for(Todo todo : list) {
-//			System.out.println(todo);
-//		}
+		TodoDao dao = new TodoDao();
+		
+		List<Todo> list = dao.getTodos();
+		
+		for(Todo todo : list) {
+			System.out.println(todo.getName());
+		}
 		
 		/*update test*/
 		
