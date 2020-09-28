@@ -29,7 +29,8 @@ public class JDBCExam01 {
 		List<Todo> list = dao.getTodos();
 		
 		for(Todo todo : list) {
-			System.out.println(todo.getName());
+			String name = todo.getName();
+	        System.out.println(name);
 		}
 		
 		/*update test*/
