@@ -34,8 +34,7 @@ public class TodoFormServlet extends HttpServlet {
 		
 		System.out.println(insertCount);
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/main.jsp");
-        requestDispatcher.forward(request, response);
+		response.sendRedirect("./main.jsp");
 	}
 
 }
