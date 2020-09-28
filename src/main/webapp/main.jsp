@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="java.util.List"%>
-<%@ include file="/Todo.java"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-%>
 <!DOCTYPE html>
 <html>
 
@@ -16,9 +11,6 @@
 </head>
 
 <body>
-	<%
-		List<Todo> list = (List) request.getAttribute("list");
-	%>
 	<div class="new-todo">
 		<div class="add-new-todo">
 			<a href="todoForm.jsp">새로운 TODO 등록</a>
@@ -28,9 +20,15 @@
 		<section class="todo">
 			<div class="title">TODO</div>
 			<div class="content todo-content">
-				<c:forEach var="todo" items="${list }">
-                	${requestScope.todo }
-                </c:forEach>
+				<table>
+					<c:forEach items="${list}" var="todo">
+						<tr>
+							<td>${todo.title }</td>
+							<td>${todo.name }</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
 		</section>
 		<section class="doing">
 			<div class="title">DOING</div>
