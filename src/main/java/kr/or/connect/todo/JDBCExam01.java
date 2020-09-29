@@ -1,9 +1,9 @@
-package kr.or.connect.jdbcexam;
+package kr.or.connect.todo;
 
 import java.util.List;
 
-import kr.or.connect.jdbcexam.dao.TodoDao;
-import kr.or.connect.jdbcexam.dto.Todo;
+import kr.or.connect.todo.dao.TodoDao;
+import kr.or.connect.todo.dto.Todo;
 
 public class JDBCExam01 {
 
