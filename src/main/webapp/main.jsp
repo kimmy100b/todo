@@ -26,7 +26,7 @@
 						<table>
 							<tr>${ todo.title }</tr>
 							<tr>
-								<td>등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:MM:SS" />
+								<td>등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" />
 								<fmt:formatDate var="formatRegDate" value="${parseRegDate}"  pattern="yyyy.MM.dd"/>
 								${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
 								</td>

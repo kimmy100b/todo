@@ -18,9 +18,13 @@ import java.util.List;
 
 public class TodoDao extends HttpServlet {
 
-	private static String dburl = "jdbc:mysql://localhost:3306/edwith";
+	private static String dburl = "jdbc:mysql://localhost:3306/edwith?useSSL=false";
 	private static String dbUser = "root";
 	private static String dbpasswd = "mysql";
+
+	Connection conn = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
 
 	public TodoDao() {
 		try {
@@ -39,10 +43,12 @@ public class TodoDao extends HttpServlet {
 			e.printStackTrace();
 		}
 
-        String sql = "INSERT INTO todo(title, name, sequence) VALUES(?,?,?)";
+		try {
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			String sql = "INSERT INTO todo(title, name, sequence) VALUES(?,?,?)";
 
-		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-				PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps = conn.prepareStatement(sql);
+
 			ps.setString(1, todo.getTitle());
 			ps.setString(2, todo.getName());
 			ps.setInt(3, todo.getSequence());
@@ -51,7 +57,30 @@ public class TodoDao extends HttpServlet {
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
+		}finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+
 
 		return insertCount;
 	}
@@ -65,9 +94,10 @@ public class TodoDao extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate asc";
-		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-				PreparedStatement ps = conn.prepareStatement(sql)) {
+		try {
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			String sql = "select id, title, name, sequence, type, regdate from todo order by regdate asc";
+			ps = conn.prepareStatement(sql);
 
 			try (ResultSet rs = ps.executeQuery()) {
 
@@ -86,7 +116,30 @@ public class TodoDao extends HttpServlet {
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
+		}finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
+
 
 		return list;
 
@@ -94,39 +147,50 @@ public class TodoDao extends HttpServlet {
 
 	public int updateTodo(Todo todo) {
 		int updateCount = 0;
-		
+
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
+
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			
-			conn = DriverManager.getConnection ( dburl, dbUser, dbpasswd );
-			
+
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+
 			String sql = "UPDATE todo SET type = ? where id = ?";
-			
+
 			ps = conn.prepareStatement(sql);
-			
+
 			ps.setString(1, todo.getType());
 			ps.setLong(2, todo.getId());
-			
+
 			updateCount = ps.executeUpdate();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
-		}finally {
-			if(ps != null) {
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (ps != null) {
 				try {
 					ps.close();
-				}catch(Exception ex) {}
-			} // if
-			
-			if(conn != null) {
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (conn != null) {
 				try {
 					conn.close();
-				}catch(Exception ex) {}
-			} // if
-		} // finally
-		
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+
 		return updateCount;
 	}
 

@@ -15,20 +15,15 @@ import kr.or.connect.todo.dao.TodoDao;
 import kr.or.connect.todo.dto.Todo;
 
 
-/**
- * @author mx02-1
- *
- */
 @WebServlet("/Main")
 public class MainServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
   
     public MainServlet() {
         super();		
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html);charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         
 		TodoDao dao = new TodoDao();
