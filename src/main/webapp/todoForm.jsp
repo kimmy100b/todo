@@ -23,7 +23,7 @@
             </div>
             <div class="form-btn">
                 <div class="btn-back">
-                    <a href="main.jsp">&lt;이전</a>
+                    <a href="./Main">&lt;이전</a>
                 </div>
                 <div class="btn-input">
                     <input type="submit" value="제출" />
