@@ -25,15 +25,17 @@
 				<c:if test="${todo.type eq 'TODO' }">
 					<section class="content todo-content">
 						<div class="content-title">${ todo.title }</div>
-						<!-- <td>등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
 						<div class="content-detail">
+						<!-- 등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
 							등록날짜 :
 							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
 								pattern="yyyy-MM-dd HH:MM:SS" />
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
-							<i class="fas fa-arrow-right"></i>
+							<button class="btn-next">
+								<i class="fas fa-arrow-right"></i>
+							</button>
 						</div>
 					</section>
 				</c:if>
@@ -45,14 +47,17 @@
 				<c:if test="${todo.type eq 'DOING' }">
 					<section class="content doing-content">
 						<div class="content-title">${ todo.title }</div>
-						<!-- <td>등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
 						<div class="content-detail">
+						<!-- 등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
 							등록날짜 :
 							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
 								pattern="yyyy-MM-dd HH:MM:SS" />
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
+							<button class="btn-next">
+								<i class="fas fa-arrow-right"></i>
+							</button>
 						</div>
 					</section>
 				</c:if>
@@ -64,8 +69,8 @@
 				<c:if test="${todo.type eq 'DONE' }">
 					<section class="content done-content">
 						<div class="content-title">${ todo.title }</div>
-						<!-- <td>등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
 						<div class="content-detail">
+						<!-- 등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
 							등록날짜 :
 							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
 								pattern="yyyy-MM-dd HH:MM:SS" />
@@ -79,5 +84,6 @@
 		</article>
 	</div>
 </body>
+<script src="js/changeType.js"></script>
 
 </html>
