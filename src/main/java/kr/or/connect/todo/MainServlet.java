@@ -15,7 +15,7 @@ import kr.or.connect.todo.dao.TodoDao;
 import kr.or.connect.todo.dto.Todo;
 
 
-@WebServlet("/Main")
+@WebServlet("/main")
 public class MainServlet extends HttpServlet {
   
     public MainServlet() {
