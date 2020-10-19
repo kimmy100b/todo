@@ -11,7 +11,7 @@
     <body>
         <h1 class="todo-title">할일 등록</h1>
         <form action="TodoFormServlet" method="post" class="todo-form">
-            <div class="form-group"><label>어떤일인가요?</label> <input type="text" name="todo" placeholder="최대 24자까지" maxlength="20" required /></div>
+            <div class="form-group"><label>어떤일인가요?</label> <input type="text" name="title" placeholder="최대 24자까지" maxlength="20" required /></div>
             <div class="form-group"><label>누가 할일인가요?</label> <input type="text" name="name" required /></div>
             <span>우선순위를 선택하세요</span>
             <div class="form-radio form-group">
