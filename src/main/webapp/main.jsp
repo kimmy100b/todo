@@ -22,7 +22,7 @@
 		<article class="todo">
 			<div class="title">TODO</div>
 			<c:forEach items="${ list }" var="todo">
-				<c:if test="${todo.type eq 'TODO' }">
+				<c:if test="${ todo.type eq 'TODO' }">
 					<section class="content todo-content">
 						<div class="content-title">${ todo.title }</div>
 						<div class="content-detail">
@@ -33,9 +33,13 @@
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
-							<button class="btn-next">
-								<i class="fas fa-arrow-right"></i>
-							</button>
+							<form action="TodoTypeServlet" method="post">
+								<input type="hidden" name="id" value="${ todo.id }">
+								<input type="hidden" name="type" value="${ todo.type }">
+								<button type="submit" class="btn-next">
+									<i class="fas fa-arrow-right"></i>
+								</button>
+							</form>
 						</div>
 					</section>
 				</c:if>
@@ -55,9 +59,13 @@
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
-							<button class="btn-next">
-								<i class="fas fa-arrow-right"></i>
-							</button>
+							<form action="TodoTypeServlet" method="post">
+								<input type="hidden" name="id" value="${ todo.id }">
+								<input type="hidden" name="type" value="${ todo.type }">
+								<button type="submit" class="btn-next">
+									<i class="fas fa-arrow-right"></i>
+								</button>
+							</form>
 						</div>
 					</section>
 				</c:if>

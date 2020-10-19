@@ -23,7 +23,7 @@ public class TodoFormServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
-		String title = request.getParameter("todo");
+		String title = request.getParameter("title");
 		String name = request.getParameter("name");
 		int sequence = Integer.parseInt(request.getParameter("sequence"));
 		
