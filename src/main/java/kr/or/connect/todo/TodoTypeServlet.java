@@ -25,6 +25,13 @@ public class TodoTypeServlet extends HttpServlet {
 		Long id = Long.parseLong(request.getParameter("id"));
 		String type = request.getParameter("type");
 		
+		if( type.equals("TODO")) {
+			type = "DOING";
+		}else if(type.equals("DOING")) {
+			type =  "DONE";
+		}
+		
+		
 		Todo todo = new Todo(id, type);
 		
 		TodoDao dao = new TodoDao();
