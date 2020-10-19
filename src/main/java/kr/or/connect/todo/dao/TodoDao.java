@@ -160,14 +160,7 @@ public class TodoDao extends HttpServlet {
 
 			ps = conn.prepareStatement(sql);
 			
-			if( todo.getType().equals("TODO")) {
-				ps.setString(1, "DOING");
-			}else if(todo.getType().equals("DOING")) {
-				ps.setString(1, "DONE");
-			}else {
-				System.out.println("실패");
-			}
-
+			ps.setString(1, todo.getType());
 			ps.setLong(2, todo.getId());
 			
 			updateCount = ps.executeUpdate();

@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="./css/styles.css" />
 <script src="https://kit.fontawesome.com/2a001071af.js"
 	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"></script>
 <title>main</title>
 </head>
 <body>
@@ -26,16 +29,16 @@
 					<section class="content todo-content">
 						<div class="content-title">${ todo.title }</div>
 						<div class="content-detail">
-						<!-- 등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
-							등록날짜 :
+							등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> 
+							<!-- 등록날짜 :
 							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
-								pattern="yyyy-MM-dd HH:MM:SS" />
+								pattern="yyyy-MM-dd HH:MM:SS" />  -->
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
 							<form action="TodoTypeServlet" method="post">
-								<input type="hidden" name="id" value="${ todo.id }">
-								<input type="hidden" name="type" value="${ todo.type }">
+								<input type="hidden" name="id" value="${ todo.id }"> <input
+									type="hidden" name="type" value="${ todo.type }">
 								<button type="submit" class="btn-next">
 									<i class="fas fa-arrow-right"></i>
 								</button>
@@ -52,16 +55,16 @@
 					<section class="content doing-content">
 						<div class="content-title">${ todo.title }</div>
 						<div class="content-detail">
-						<!-- 등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
-							등록날짜 :
+							등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> 
+							<!-- 등록날짜 :
 							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
-								pattern="yyyy-MM-dd HH:MM:SS" />
+								pattern="yyyy-MM-dd HH:MM:SS" />  -->
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
 							<form action="TodoTypeServlet" method="post">
-								<input type="hidden" name="id" value="${ todo.id }">
-								<input type="hidden" name="type" value="${ todo.type }">
+								<input type="hidden" name="id" value="${ todo.id }"> <input
+									type="hidden" name="type" value="${ todo.type }">
 								<button type="submit" class="btn-next">
 									<i class="fas fa-arrow-right"></i>
 								</button>
@@ -78,10 +81,10 @@
 					<section class="content done-content">
 						<div class="content-title">${ todo.title }</div>
 						<div class="content-detail">
-						<!-- 등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> -->
-							등록날짜 :
+							등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> 
+							<!-- 등록날짜 :
 							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
-								pattern="yyyy-MM-dd HH:MM:SS" />
+								pattern="yyyy-MM-dd HH:MM:SS" />  -->
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
 							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
