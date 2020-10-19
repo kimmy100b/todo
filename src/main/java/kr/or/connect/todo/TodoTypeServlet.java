@@ -1,7 +1,9 @@
 package kr.or.connect.todo;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +16,12 @@ import kr.or.connect.todo.dto.Todo;
 @WebServlet("/TodoTypeServlet")
 public class TodoTypeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public TodoTypeServlet() {
-        super();
-    }
-    
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		Long id = Long.parseLong(request.getParameter("id"));
-		String type = request.getParameter("type");
+	TodoDao dao = null;
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Long id = Long.parseLong(req.getParameter("id"));
+		String type = req.getParameter("type");
 		
 		if( type.equals("TODO")) {
 			type = "DOING";
@@ -31,15 +29,15 @@ public class TodoTypeServlet extends HttpServlet {
 			type =  "DONE";
 		}
 		
-		
 		Todo todo = new Todo(id, type);
-		
 		TodoDao dao = new TodoDao();
-		int updateCount = dao.updateTodo(todo);
-		
-		System.out.println(updateCount);
-		
-		response.sendRedirect("./main");
+		dao.updateTodo(todo);
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+	
+	
 }

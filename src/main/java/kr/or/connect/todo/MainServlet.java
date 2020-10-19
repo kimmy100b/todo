@@ -14,29 +14,36 @@ import javax.servlet.http.HttpServletResponse;
 import kr.or.connect.todo.dao.TodoDao;
 import kr.or.connect.todo.dto.Todo;
 
-
 @WebServlet("/main")
 public class MainServlet extends HttpServlet {
-  
-    public MainServlet() {
-        super();		
-    }
+	TodoDao dao = null;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        
-		TodoDao dao = new TodoDao();
-		
-		List<Todo> list = dao.getTodos();
-        request.setAttribute("list",list);
-        
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("./main.jsp");
-        try {
-        	requestDispatcher.forward(request, response);
-        } catch (ServletException e) {
-            System.out.println(e);
-        }
+	public MainServlet() {
+		super();
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html;charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
+
+		TodoDao dao = new TodoDao();
+		List<Todo> todoList = dao.getTodos();
+		req.setAttribute("todoList", todoList);
+		
+		String[] todoTypes= {"TODO", "DOING", "DONE"};
+		req.setAttribute("todoTypes", todoTypes);
+
+		RequestDispatcher requestDispatcher = req.getRequestDispatcher("main.jsp");
+		try {
+			requestDispatcher.forward(req, resp);
+		} catch (ServletException e) {
+			System.out.println(e);
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
+	}
 }

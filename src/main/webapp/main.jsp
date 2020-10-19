@@ -16,85 +16,44 @@
 <title>main</title>
 </head>
 <body>
+	<header>
+		<h1 id="mainTitle">나의해야할 할일들</h1>
+	</header>
+
 	<div class="new-todo">
 		<div class="add-new-todo">
 			<a href="todoForm.jsp">새로운 TODO 등록</a>
 		</div>
 	</div>
+
 	<div class="wrapper">
-		<article class="todo">
-			<div class="title">TODO</div>
-			<c:forEach items="${ list }" var="todo">
-				<c:if test="${ todo.type eq 'TODO' }">
-					<section class="content todo-content">
-						<div class="content-title">${ todo.title }</div>
-						<div class="content-detail">
-							등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> 
-							<!-- 등록날짜 :
-							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
-								pattern="yyyy-MM-dd HH:MM:SS" />  -->
+		<c:forEach var="type" items="${todoTypes}">
+			<section id="${type}">
+				<div class="title">${type}</div>
+				<c:forEach var="list" items="${todoList}">
+					<c:if test="${list.type eq type}">
+						<div class="content">
+							<h1 class="content-title">${list.title}</h1>
+							<div class="content-detail">등록날짜 :
+							<fmt:parseDate var="parseRegDate" value="${ list.regDate }"
+								pattern="yyyy-MM-dd HH:mm:ss.S" />
 							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 								pattern="yyyy.MM.dd" />
-							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
-							<form action="TodoTypeServlet" method="post">
-								<input type="hidden" name="id" value="${ todo.id }"> <input
-									type="hidden" name="type" value="${ todo.type }">
-								<button type="submit" class="btn-next">
+							${ formatRegDate },
+								${list.name}, 우선순위 ${list.sequence}</div>
+							<c:if test="${list.type ne 'DONE'}">
+								<button class="btn-next"
+									onclick="changeButtonClick(${list.id},this)">
 									<i class="fas fa-arrow-right"></i>
 								</button>
-							</form>
+							</c:if>
 						</div>
-					</section>
-				</c:if>
-			</c:forEach>
-		</article>
-		<article class="doing">
-			<div class="title">DOING</div>
-			<c:forEach items="${ list }" var="todo">
-				<c:if test="${todo.type eq 'DOING' }">
-					<section class="content doing-content">
-						<div class="content-title">${ todo.title }</div>
-						<div class="content-detail">
-							등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> 
-							<!-- 등록날짜 :
-							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
-								pattern="yyyy-MM-dd HH:MM:SS" />  -->
-							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
-								pattern="yyyy.MM.dd" />
-							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
-							<form action="TodoTypeServlet" method="post">
-								<input type="hidden" name="id" value="${ todo.id }"> <input
-									type="hidden" name="type" value="${ todo.type }">
-								<button type="submit" class="btn-next">
-									<i class="fas fa-arrow-right"></i>
-								</button>
-							</form>
-						</div>
-					</section>
-				</c:if>
-			</c:forEach>
-		</article>
-		<article class="done">
-			<div class="title">DONE</div>
-			<c:forEach items="${ list }" var="todo">
-				<c:if test="${todo.type eq 'DONE' }">
-					<section class="content done-content">
-						<div class="content-title">${ todo.title }</div>
-						<div class="content-detail">
-							등록날짜 :   <fmt:parseDate var="parseRegDate" value="${ todo.regDate }" pattern="yyyy-MM-dd HH:mm:ss.S" /> 
-							<!-- 등록날짜 :
-							<fmt:parseDate var="parseRegDate" value="${ todo.regDate }"
-								pattern="yyyy-MM-dd HH:MM:SS" />  -->
-							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
-								pattern="yyyy.MM.dd" />
-							${ formatRegDate }, ${ todo.name }, 우선순위 ${ todo.sequence }
-						</div>
-					</section>
-				</c:if>
-			</c:forEach>
-		</article>
+					</c:if>
+				</c:forEach>
+			</section>
+		</c:forEach>
 	</div>
+	<script src="js/changeType.js"></script>
 </body>
-<script src="js/changeType.js"></script>
 
 </html>
