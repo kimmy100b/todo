@@ -1,66 +1,64 @@
 .todo-title {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.todo-form {
-    margin: 0% 23%;
+	text-align: center;
+	margin-bottom: 35px;
 }
 
 .form-group {
-    display: grid;
-    margin-bottom: 20px;
+	display: grid;
+	margin-bottom: 20px;
 }
 
 .form-group label {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .form-group input[type="text"] {
-    width: 696px;
-    height: 30px;
+	height: 30px;
 }
 
 .form-radio {
-    display: flex;
-    margin-top: 10px;
+	display: flex;
+	margin-top: 10px;
 }
 
 .form-radio label {
-    padding-right: 10px;
+	padding-right: 10px;
 }
 
-.btn-back {
-    width: 120px;
-    height: 35px;
-    border: 1.5px black solid;
-    text-align: center;
+.btn-submit, .form-btn input[type="reset"], .form-btn input[type="button"]
+	{
+	width: 120px;
+	height: 35px;
+	font-weight: 500;
+	font-size: large;
 }
 
-.btn-back a {
-    font-weight: 500;
-    font-size: large;
-    text-decoration: none;
-    vertical-align: -webkit-baseline-middle;
+.form-btn input[type="button"] {
+	background-color: white;
+	border: 1px solid;
 }
 
-.todo-form input[type="submit"],
-.todo-form input[type="reset"] {
-    width: 120px;
-    height: 35px;
-    font-weight: 500;
-    font-size: large;
-    color: white;
-    background-color: var(--blue);
-    border: none;
+.form-btn input[type="button"]:hover {
+	background-color: var(--mint);
 }
 
-.todo-form input[type="submit"] {
-    margin-right: 8px;
+.btn-submit, .form-btn input[type="reset"] {
+	color: white;
+	background-color: var(--blue);
+	border: none;
+}
+
+.btn-submit:hover, .form-btn input[type="reset"]:hover {
+	color: black;
+}
+
+.btn-submit {
+	margin-right: 8px;
+	text-align: center;
 }
 
 .form-btn {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
 }

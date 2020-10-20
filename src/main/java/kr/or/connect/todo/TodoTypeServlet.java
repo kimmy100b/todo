@@ -13,22 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 import kr.or.connect.todo.dao.TodoDao;
 import kr.or.connect.todo.dto.Todo;
 
-@WebServlet("/TodoTypeServlet")
+@WebServlet("/todoType")
 public class TodoTypeServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 	TodoDao dao = null;
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Long id = Long.parseLong(req.getParameter("id"));
 		String type = req.getParameter("type");
-		
-		if( type.equals("TODO")) {
+
+		if (type.equals("TODO")) {
 			type = "DOING";
-		}else if(type.equals("DOING")) {
-			type =  "DONE";
+		} else if (type.equals("DOING")) {
+			type = "DONE";
 		}
-		
+
 		Todo todo = new Todo(id, type);
 		TodoDao dao = new TodoDao();
 		dao.updateTodo(todo);
@@ -38,6 +37,5 @@ public class TodoTypeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
 	}
-	
-	
+
 }

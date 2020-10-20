@@ -13,12 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import kr.or.connect.todo.dao.TodoDao;
 import kr.or.connect.todo.dto.Todo;
 
-@WebServlet("/TodoAddServlet")
+@WebServlet("/todoAdd")
 public class TodoAddServlet extends HttpServlet {
-
-	public TodoAddServlet() {
-		super();
-	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
