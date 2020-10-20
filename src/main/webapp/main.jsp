@@ -22,7 +22,7 @@
 
 	<div class="new-todo">
 		<div class="add-new-todo">
-			<a href="todoForm.jsp">새로운 TODO 등록</a>
+			<a href="todo">새로운 TODO 등록</a>
 		</div>
 	</div>
 
