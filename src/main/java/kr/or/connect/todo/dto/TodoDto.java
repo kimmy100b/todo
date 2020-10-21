@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class TodoDto extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	private Long id;
 	private String name;
 	private String regDate;
