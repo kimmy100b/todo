@@ -11,13 +11,15 @@
 
 <body>
 	<h1 class="todo-title">할일 등록</h1>
-	<form action="TodoAddServlet" method="post" class="todo-form">
+	<form action="./todoAdd" method="post" class="todo-form"
+		name="todoForm">
 		<div class="form-group">
-			<label>어떤일인가요?</label> <input type="text" name="title" id="title"
-				placeholder="최대 24자까지" required />
+			<label>어떤 일인가요?</label> <input type="text" name="title" id="title"
+				placeholder="최대 24자까지 입력할 수 있습니다." maxlength="24" required />
 		</div>
 		<div class="form-group">
-			<label>누가 할일인가요?</label> <input type="text" name="name" required />
+			<label>누가 할일인가요?</label> <input type="text" name="name"
+				placeholder="이름을 입력하세요." required />
 		</div>
 		<span>우선순위를 선택하세요</span>
 		<div class="form-radio form-group">
@@ -28,14 +30,14 @@
 		</div>
 		<div class="form-btn">
 			<div class="btn-back">
-				<a href="./main">&lt;이전</a>
+				<input type="button" onClick="location.href='./main'" value="&lt;이전"></input>
 			</div>
 			<div class="btn-input">
-				<input type="submit" value="제출" /> <input type="reset"
-					value="내용지우기" />
+				<input class="btn-submit" onclick="checkForm()" value="제출" /> <input
+					type="reset" value="내용지우기" />
 			</div>
 		</div>
 	</form>
-	<script src="js/todoTitleCheck.js"></script>
+	<script type="text/javascript" src="js/todoFormCheck.js"></script>
 </body>
 </html>

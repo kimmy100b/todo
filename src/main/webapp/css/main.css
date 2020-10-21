@@ -1,65 +1,68 @@
-body {
-    padding: 2% 7%;
+.main-title {
+	width: fit-content;
+	transform: rotate(-30deg);
+	position: absolute;
+	left: 190px;
+	color: var(--green);
 }
 
 .new-todo {
-    display: flex;
-    justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .add-new-todo {
-    width: 200px;
-    height: 35px;
-    padding-top: 10px;
-    color: white;
-    text-align: center;
-    background-color: var(--blue);
+	width: 200px;
+	height: 35px;
+	padding-top: 10px;
+	color: white;
+	text-align: center;
+	background-color: var(--blue);
 }
 
 .add-new-todo a {
-    text-decoration: none;
-    color: white;
+	text-decoration: none;
+	color: white;
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2%;
 }
 
-.title,
-.content {
-    width: 350px;
-    padding: 20px;
+.title, .content {
+	width: 350px;
+	padding: 20px;
 }
 
 .title {
-    font-weight: 700;
-    font-size: xx-large;
-    color: white;
-    background-color: var(--green);
+	font-weight: 700;
+	font-size: xx-large;
+	color: white;
+	background-color: var(--green);
 }
 
 .content {
-    height: 80px;
-    margin-top: 7%;
-    background-color: var(--mint);
+	height: 80px;
+	margin-top: 7%;
+	background-color: var(--mint);
 }
 
-.content-title{
-    font-weight: 700;
-    font-size: x-large;
+.content-title {
+	font-weight: 700;
+	font-size: x-large;
+	padding: 7px 0px 12px 0px;
 }
 
-.content-detail{
+.content-detail {
 	display: flex;
 	position: absolute;
 }
 
-.btn-next{
+.btn-next {
 	width: 30px;
 	height: 30px;
 	position: relative;
-    right: -12px;
+	left: 327px;
 }
-

@@ -18,10 +18,6 @@ import kr.or.connect.todo.dto.Todo;
 public class MainServlet extends HttpServlet {
 	TodoDao dao = null;
 
-	public MainServlet() {
-		super();
-	}
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=UTF-8");

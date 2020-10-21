@@ -17,8 +17,8 @@ function resultType(type, eventNode) {
 function changeButtonClick(id, eventNode) {
 	var oReq = new XMLHttpRequest();
 	var type = eventNode.parentNode.parentNode.getAttribute("id");
-	var url = "./TodoTypeServlet";
-	
+	var url = "./todoType";
+
 	oReq.addEventListener("load", function() {
 		if (this.readyState == 4 && this.status == 200) {
 			console.log("성공");
@@ -31,6 +31,5 @@ function changeButtonClick(id, eventNode) {
 
 	oReq.open("POST", url, true);
 	oReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	// oReq.send("id="+encodeURIComponent(id)+"&type="+encodeURIComponent(type));
-	oReq.send("id="+id+"&type="+type);
+	oReq.send("id=" + id + "&type=" + type);
 }

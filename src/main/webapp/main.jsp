@@ -17,7 +17,7 @@
 </head>
 <body>
 	<header>
-		<h1 id="mainTitle">나의해야할 할일들</h1>
+		<h1 class="main-title">나의 해야할 일들</h1>
 	</header>
 
 	<div class="new-todo">
@@ -34,13 +34,14 @@
 					<c:if test="${list.type eq type}">
 						<div class="content">
 							<h1 class="content-title">${list.title}</h1>
-							<div class="content-detail">등록날짜 :
-							<fmt:parseDate var="parseRegDate" value="${ list.regDate }"
-								pattern="yyyy-MM-dd HH:mm:ss.S" />
-							<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
-								pattern="yyyy.MM.dd" />
-							${ formatRegDate },
-								${list.name}, 우선순위 ${list.sequence}</div>
+							<div class="content-detail">
+								등록날짜 :
+								<fmt:parseDate var="parseRegDate" value="${ list.regDate }"
+									pattern="yyyy-MM-dd HH:mm:ss.S" />
+								<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
+									pattern="yyyy.MM.dd" />
+								${ formatRegDate }, ${list.name}, 우선순위 ${list.sequence}
+							</div>
 							<c:if test="${list.type ne 'DONE'}">
 								<button class="btn-next"
 									onclick="changeButtonClick(${list.id},this)">
@@ -53,7 +54,7 @@
 			</section>
 		</c:forEach>
 	</div>
-	<script src="js/changeType.js"></script>
+	<script type="text/javascript" src="js/changeType.js"></script>
 </body>
 
 </html>

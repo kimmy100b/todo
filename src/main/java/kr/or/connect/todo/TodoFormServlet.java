@@ -15,8 +15,6 @@ import kr.or.connect.todo.dto.Todo;
 
 @WebServlet("/todo")
 public class TodoFormServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher requestDispatcher = req.getRequestDispatcher("todoForm.jsp");
