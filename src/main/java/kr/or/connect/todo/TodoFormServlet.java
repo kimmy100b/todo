@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.or.connect.todo.dao.TodoDao;
-import kr.or.connect.todo.dto.Todo;
+import kr.or.connect.todo.dto.TodoDto;
 
 @WebServlet("/todo")
 public class TodoFormServlet extends HttpServlet {

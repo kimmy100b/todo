@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.or.connect.todo.dao.TodoDao;
-import kr.or.connect.todo.dto.Todo;
+import kr.or.connect.todo.dto.TodoDto;
 
 @WebServlet("/todoType")
 public class TodoTypeServlet extends HttpServlet {
@@ -28,7 +28,7 @@ public class TodoTypeServlet extends HttpServlet {
 			type = "DONE";
 		}
 
-		Todo todo = new Todo(id, type);
+		TodoDto todo = new TodoDto(id, type);
 		TodoDao dao = new TodoDao();
 		dao.updateTodo(todo);
 	}

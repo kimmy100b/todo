@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.or.connect.todo.dto.Todo;
+import kr.or.connect.todo.dto.TodoDto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,7 +34,7 @@ public class TodoDao extends HttpServlet {
 		}
 	}
 
-	public int addTodo(Todo todo) {
+	public int addTodo(TodoDto todo) {
 		int insertCount = 0;
 
 		try {
@@ -85,8 +85,8 @@ public class TodoDao extends HttpServlet {
 		return insertCount;
 	}
 
-	public List<Todo> getTodos() {
-		List<Todo> list = new ArrayList<>();
+	public List<TodoDto> getTodos() {
+		List<TodoDto> list = new ArrayList<>();
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -108,7 +108,7 @@ public class TodoDao extends HttpServlet {
 					int sequence = rs.getInt("sequence");
 					String type = rs.getString("type");
 					String regDate = rs.getString("regDate");
-					Todo todo = new Todo(id, name, regDate, sequence, title, type);
+					TodoDto todo = new TodoDto(id, name, regDate, sequence, title, type);
 					list.add(todo);
 				}
 			} catch (Exception e) {
@@ -145,7 +145,7 @@ public class TodoDao extends HttpServlet {
 
 	}
 
-	public int updateTodo(Todo todo) {
+	public int updateTodo(TodoDto todo) {
 		int updateCount = 0;
 
 		Connection conn = null;

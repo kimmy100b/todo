@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Todo extends HttpServlet {
+public class TodoDto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
@@ -17,24 +17,24 @@ public class Todo extends HttpServlet {
 	private String title;
 	private String type;
 
-	public Todo() {
+	public TodoDto() {
 		
 	}
 	
-	public Todo(Long id, String type) {
+	public TodoDto(Long id, String type) {
 		super();
 		this.id = id;
 		this.type = type;
 	}
 
-	public Todo(String title, String name,int sequence) {
+	public TodoDto(String title, String name,int sequence) {
 		super();
 		this.title = title;
 		this.name = name;
 		this.sequence = sequence;
 	}
 	
-	public Todo(Long id, String name, String regDate, int sequence, String title, String type) {
+	public TodoDto(Long id, String name, String regDate, int sequence, String title, String type) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -12,10 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.or.connect.todo.dao.TodoDao;
-import kr.or.connect.todo.dto.Todo;
+import kr.or.connect.todo.dto.TodoDto;
 
 @WebServlet("/main")
 public class MainServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	TodoDao dao = null;
 
 	@Override
@@ -24,7 +25,7 @@ public class MainServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 
 		TodoDao dao = new TodoDao();
-		List<Todo> todoList = dao.getTodos();
+		List<TodoDto> todoList = dao.getTodos();
 		req.setAttribute("todoList", todoList);
 		
 		String[] todoTypes= {"TODO", "DOING", "DONE"};

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.or.connect.todo.dao.TodoDao;
-import kr.or.connect.todo.dto.Todo;
+import kr.or.connect.todo.dto.TodoDto;
 
 @WebServlet("/todoAdd")
 public class TodoAddServlet extends HttpServlet {
@@ -26,7 +26,7 @@ public class TodoAddServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		int sequence = Integer.parseInt(request.getParameter("sequence"));
 
-		Todo todo = new Todo(title, name, sequence);
+		TodoDto todo = new TodoDto(title, name, sequence);
 
 		TodoDao dao = new TodoDao();
 		dao.addTodo(todo);
