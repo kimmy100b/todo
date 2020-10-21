@@ -1,11 +1,5 @@
 package kr.or.connect.todo.dao;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import kr.or.connect.todo.dto.TodoDto;
 
 import java.sql.Connection;
@@ -16,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoDao extends HttpServlet {
+public class TodoDao {
 
 	private static String dburl = "jdbc:mysql://localhost:3306/edwith?useSSL=false";
 	private static String dbUser = "root";

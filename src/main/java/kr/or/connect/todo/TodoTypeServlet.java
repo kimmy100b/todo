@@ -1,9 +1,7 @@
 package kr.or.connect.todo;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +13,7 @@ import kr.or.connect.todo.dto.TodoDto;
 
 @WebServlet("/todoType")
 public class TodoTypeServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	TodoDao dao = null;
 
 	@Override
