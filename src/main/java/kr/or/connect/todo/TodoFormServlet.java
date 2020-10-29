@@ -19,7 +19,7 @@ public class TodoFormServlet extends HttpServlet {
 		try {
 			requestDispatcher.forward(req, resp);
 		} catch (ServletException e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 	}
 
