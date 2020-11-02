@@ -32,7 +32,7 @@
 				<input type="button" onClick="location.href='./main'" value="&lt;이전"></input>
 			</div>
 			<div class="btn-input">
-				<input class="btn-submit" onclick="checkForm()" value="제출" /> <input
+				<input type="button" onclick="checkForm()" value="제출" /> <input
 					type="reset" value="내용지우기" />
 			</div>
 		</div>

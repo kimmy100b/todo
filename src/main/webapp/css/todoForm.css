@@ -25,7 +25,7 @@
 	padding-right: 10px;
 }
 
-.btn-submit, .form-btn input[type="reset"], .form-btn input[type="button"]
+.btn-input input[type="button"], .form-btn input[type="reset"], .btn-back input[type="button"]
 	{
 	width: 120px;
 	height: 35px;
@@ -33,16 +33,16 @@
 	font-size: large;
 }
 
-.form-btn input[type="button"] {
+.btn-back input[type="button"] {
 	background-color: white;
 	border: 1px solid;
 }
 
-.form-btn input[type="button"]:hover {
+.btn-back input[type="button"]:hover {
 	background-color: var(--mint);
 }
 
-.btn-submit, .form-btn input[type="reset"] {
+.btn-input input[type="button"], .form-btn input[type="reset"] {
 	color: white;
 	background-color: var(--blue);
 	border: none;
@@ -52,7 +52,7 @@
 	color: black;
 }
 
-.btn-submit {
+.btn-input input[type="button"] {
 	margin-right: 8px;
 	text-align: center;
 }
