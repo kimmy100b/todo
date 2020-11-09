@@ -25,7 +25,7 @@
 	padding-right: 10px;
 }
 
-.btn-input input[type="button"], .form-btn input[type="reset"], .btn-back input[type="button"]
+.btn-submit, .btn-reset, .btn-back
 	{
 	width: 120px;
 	height: 35px;
@@ -33,26 +33,26 @@
 	font-size: large;
 }
 
-.btn-back input[type="button"] {
+.btn-back{
 	background-color: white;
 	border: 1px solid;
 }
 
-.btn-back input[type="button"]:hover {
+.btn-back:hover {
 	background-color: var(--mint);
 }
 
-.btn-input input[type="button"], .form-btn input[type="reset"] {
+.btn-submit, .btn-reset {
 	color: white;
 	background-color: var(--blue);
 	border: none;
 }
 
-.btn-submit:hover, .form-btn input[type="reset"]:hover {
+.btn-submit:hover, .btn-reset:hover {
 	color: black;
 }
 
-.btn-input input[type="button"] {
+.btn-submit {
 	margin-right: 8px;
 	text-align: center;
 }

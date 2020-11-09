@@ -21,7 +21,6 @@ function changeButtonClick(id, eventNode) {
 
 	oReq.addEventListener("load", function() {
 		if (this.readyState == 4 && this.status == 200) {
-			console.log("성공");
 			resultType(type, eventNode);
 		} else {
 			console.log("실패");

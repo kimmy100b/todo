@@ -26,7 +26,6 @@ public class TodoDao {
 	}
 
 	public int addTodo(TodoDto todo) {
-		int insertCount = 0;
 		String sql = "INSERT INTO todo(title, name, sequence) VALUES(?,?,?)";
 
 		try (Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPasswd);
@@ -35,13 +34,13 @@ public class TodoDao {
 			ps.setString(2, todo.getName());
 			ps.setInt(3, todo.getSequence());
 
-			insertCount = ps.executeUpdate();
+			return ps.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-		return insertCount;
+		return -1;
 	}
 
 	public List<TodoDto> getTodos() {
@@ -70,19 +69,18 @@ public class TodoDao {
 	}
 
 	public int updateTodo(TodoDto todo) {
-		int updateCount = 0;
 		String sql = "UPDATE todo SET type = ? where id = ?";
 
 		try (Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPasswd);
 				PreparedStatement ps = conn.prepareStatement(sql);) {
 			ps.setString(1, todo.getType());
 			ps.setLong(2, todo.getId());
-			updateCount = ps.executeUpdate();
+			return ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return updateCount;
+		return -1;
 	}
 
 }
