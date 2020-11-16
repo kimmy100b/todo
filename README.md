@@ -1,8 +1,6 @@
 # 프로젝트 소개
 
-이 프로젝트는 edwith와 진행하고 있는 "TO-DO-LIST 프로젝트"입니다. html, css, jsp 언어로 구현하였습니다. <br/>
-
-<br/>
+이 프로젝트는 edwith와 진행하고 있는 "TO-DO-LIST 프로젝트"입니다. html, css, jsp 언어로 구현하였습니다.
 <br/>
 
 # 프로젝트 요구사항
@@ -28,21 +26,16 @@
 - 할일등록폼에서 값을 입력하고 제출 버튼을 누르면 post 방식으로 요청하게 합니다.
 - 해당 요청을 서블릿이 받아서 처리하게하고, 요청에 대한 모든 일이 끝나면 메인화면으로 리다이렉트 합니다.
 - 메인화면에서 todo 상태변경 버튼(->)을 클릭하여 요청을 보낼 때, Todo 의 Id와 상태값을 전달하여 다음 상태로 (현재 상태가 Todo라면 doing으로 doing 이라면 done) 상태를 나타내는 컬럼값을 변경하고 응답결과로 "success"를 보냅니다.
-
-<br/>
 <br/>
 
 # 개발 인원
 
 1명(개인 프로젝트)
-
-<br/>
 <br/>
 
 # 개발 기간
 
 2020.09.23 - 2020.10.21(29일)
-<br/>
 <br/>
 
 # 개발 환경
@@ -51,14 +44,10 @@
 -   개발도구 : vscode, Github, Eclipse
 -   개발언어 : HTML, CSS, JSP
 <br/>
-<br/>
-
 
 # 프로젝트 코드 리뷰
-
 - [BE코드리뷰](https://kimmy100b.github.io/codereview/2020/10/30/edwith-codereview/)
 - [FE코드리뷰](https://kimmy100b.github.io/codereview/2020/11/09/edwith-codereview/)
-<br/>
 <br/>
 
 # 실행영상
