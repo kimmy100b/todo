@@ -40,12 +40,11 @@
 
 # 개발 환경
 
-IDE : Eclipse IDE, HeidiSQL
-OS : Windows10
-Program Language : HTML, CSS, Javascript, JSP, Servlet
-Database : MySQL 8
-Build Tool : Maven
-git : https://github.com/kimmy100b/mx_apply (조직도 페이지), https://github.com/kimmy100b/mx_payment (전자결재 페이지),
+IDE : Eclipse IDE, HeidiSQL<br/>
+OS : Windows10<br/>
+Program Language : HTML, CSS, Javascript, JSP, Servlet<br/>
+Database : MySQL 8<br/>
+Build Tool : Maven<br/>
 
 <br/>
 
