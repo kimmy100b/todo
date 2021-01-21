@@ -40,9 +40,13 @@
 
 # 개발 환경
 
--   개발환경 : Windows 10 Enterprise x64, JDK 1.8, tomcat 8.5
--   개발도구 : vscode, Github, Eclipse
--   개발언어 : HTML, CSS, JSP
+IDE : Eclipse IDE, HeidiSQL
+OS : Windows10
+Program Language : HTML, CSS, Javascript, JSP, Servlet
+Database : MySQL 8
+Build Tool : Maven
+git : https://github.com/kimmy100b/mx_apply (조직도 페이지), https://github.com/kimmy100b/mx_payment (전자결재 페이지),
+
 <br/>
 
 # 프로젝트 코드 리뷰
