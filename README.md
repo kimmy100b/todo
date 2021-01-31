@@ -40,9 +40,12 @@
 
 # 개발 환경
 
--   개발환경 : Windows 10 Enterprise x64, JDK 1.8, tomcat 8.5
--   개발도구 : vscode, Github, Eclipse
--   개발언어 : HTML, CSS, JSP
+IDE : Eclipse IDE, HeidiSQL<br/>
+OS : Windows10<br/>
+Program Language : HTML, CSS, Javascript, JSP, Servlet<br/>
+Database : MySQL 8<br/>
+Build Tool : Maven<br/>
+
 <br/>
 
 # 프로젝트 코드 리뷰
