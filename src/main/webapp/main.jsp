@@ -33,11 +33,11 @@
 							<h1 class="content-title">${list.title}</h1>
 							<div class="content-detail">
 								등록날짜 :
-								<fmt:parseDate var="parseRegDate" value="${ list.regDate }"
-									pattern="yyyy-MM-dd HH:mm:ss.S" />
+								<fmt:parseDate var="parseRegDate" value="${list.regDate}"
+									pattern="yyyy-MM-dd HH:mm:ss" />
 								<fmt:formatDate var="formatRegDate" value="${parseRegDate}"
 									pattern="yyyy.MM.dd" />
-								${ formatRegDate }, ${list.name}, 우선순위 ${list.sequence}
+								${formatRegDate}, ${list.name}, 우선순위 ${list.sequence}
 							</div>
 							<c:if test="${list.type ne 'DONE'}">
 								<button class="btn-next"

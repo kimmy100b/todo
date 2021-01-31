@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TodoDao {
 
-	final private static String dbUrl = "jdbc:mysql://localhost:3306/edwith?useSSL=false";
+	final private static String dbUrl = "jdbc:mysql://localhost:3306/edwith?useSSL=false&serverTimezone=Asia/Seoul";
 	final private static String dbUser = "root";
 	final private static String dbPasswd = "mysql";
 
